@@ -523,3 +523,7 @@ footer .social a { color: var(--accent); font-weight: 500; }
 .news-source a { font-family: var(--f-display); font-weight: 600; text-decoration: none; }
 .news-note { color: var(--muted); font-size: .95rem; margin-top: 2rem; }
 .latest-news { margin-top: 1.4rem; }
+
+/* YouTube Short on the homepage */
+#watch { background: #F5F7FB; }
+.short-video { display: block; width: min(320px, 100%); aspect-ratio: 9 / 16; height: auto; justify-self: center; border-radius: 22px; background: #0E1322; box-shadow: 0 18px 40px rgba(19, 32, 59, .18); }
