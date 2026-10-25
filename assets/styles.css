@@ -501,3 +501,8 @@ table.compare .hl { background: color-mix(in srgb, var(--accent) 7%, #FFFFFF); }
 @media (max-width: 560px) {
   .gets, .pay-steps.steps-4, .pay-steps.steps-5 { grid-template-columns: 1fr; }
 }
+
+/* Social links in footer */
+footer .wrap { row-gap: .6rem; }
+footer .social { flex-basis: 100%; }
+footer .social a { color: var(--accent); font-weight: 500; }
