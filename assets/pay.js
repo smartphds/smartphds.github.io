@@ -20,7 +20,8 @@ var SMARTPHDS_PAYMENT_LINKS = {
       el.setAttribute("href", url);
     } else {
       var plan = el.getAttribute("data-plan") || "SmartPhDs";
-      el.setAttribute("href", "mailto:smartphds1@gmail.com?subject=" + encodeURIComponent("Order: " + plan + " package"));
+      var body = "Hi SmartPhDs,\n\nI'd like the " + plan + " package.\n\nTarget role(s): \nIndustry or field: \nLinks to 2-3 job postings: \nDeadline, if any: \n\nI've attached my current CV.\n";
+      el.setAttribute("href", "mailto:smartphds1@gmail.com?subject=" + encodeURIComponent("Order: " + plan + " package") + "&body=" + encodeURIComponent(body));
     }
   });
 })();
