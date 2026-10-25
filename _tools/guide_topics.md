@@ -9,7 +9,7 @@ Add new ideas at the bottom. Folders starting with "_" are not published.
 - [ ] Data science for PhDs: how to make the switch from any field
 - [ ] Should you do a postdoc before industry?
 - [ ] Management consulting for PhDs: how case interviews work
-- [ ] The 5 interview questions every pharma PhD gets
+- [ ] The 5 interview questions every PhD gets in industry interviews
 - [ ] Product management for PhDs: is it right for you?
 - [ ] What a CMC scientist does all day
 - [ ] Patent agent careers for PhDs in science and engineering
@@ -19,7 +19,7 @@ Add new ideas at the bottom. Folders starting with "_" are not published.
 - [ ] Science policy careers: how PhDs get started
 - [ ] Medical Science Liaison: is it the right move for you?
 - [ ] Industry R&D careers beyond biotech: chemicals, materials, energy and food
-- [ ] How to write a cover letter for pharma and biotech jobs
+- [ ] How to write an industry cover letter as a PhD
 - [ ] Transferable skills from social science and humanities PhDs
 - [ ] Informational interviews: how to ask and what to say
 - [ ] Analytical Development careers for PhDs
