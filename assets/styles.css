@@ -506,3 +506,12 @@ table.compare .hl { background: color-mix(in srgb, var(--accent) 7%, #FFFFFF); }
 footer .wrap { row-gap: .6rem; }
 footer .social { flex-basis: 100%; }
 footer .social a { color: var(--accent); font-weight: 500; }
+
+/* Refund policy callouts */
+.refund-note { font-size: .95rem; color: var(--muted); }
+.refund-note a { color: var(--accent); font-weight: 500; }
+.refund-row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 1.2rem 3rem; align-items: start; }
+.refund-row .ticks { font-size: 1.15rem; }
+.refund-link { grid-column: 2; font-family: var(--f-display); font-weight: 600; }
+.refund-link a { text-decoration: none; }
+@media (max-width: 760px) { .refund-row { grid-template-columns: 1fr; } .refund-link { grid-column: 1; } }
