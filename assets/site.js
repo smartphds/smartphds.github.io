@@ -33,12 +33,16 @@
   var form = document.getElementById("finder-form");
   if (!form) return;
   var roles = {
-    RA: { name: "Regulatory Affairs", desc: "You turn research data into the submissions that get drugs approved." },
-    QA: { name: "Quality Assurance / Control", desc: "You make sure every batch is right before it reaches patients." },
-    AD: { name: "Analytical Development", desc: "You build and validate the methods that test every drug." },
-    MSL: { name: "Medical Science Liaison", desc: "You meet physicians and explain the science behind new treatments." },
-    MW: { name: "Medical Writing", desc: "You write the documents regulators and doctors rely on." },
-    CMC: { name: "CMC & Tech Transfer", desc: "You move drugs from the lab into manufacturing." }
+    DS: { name: "Data Scientist / Machine Learning", desc: "You turn messy data into answers. Data scientists build models and analyses for tech, biotech, finance and almost every other industry." },
+    CON: { name: "Management Consultant", desc: "You like solving new problems with smart people. Consultants break down business questions fast, and firms actively recruit PhDs." },
+    PM: { name: "Product Manager", desc: "You want to build things people use. Product managers decide what gets built and why, working between users, engineers and business teams." },
+    RD: { name: "Industry R&D Scientist", desc: "You love the bench. Industry scientists run experiments that lead to real products, in biotech, chemicals, materials, food, energy and more." },
+    RA: { name: "Regulatory Affairs / Quality", desc: "You care about getting it right. Regulatory and quality professionals make sure products meet the rules before they reach people." },
+    MSL: { name: "Medical Science Liaison", desc: "You enjoy explaining science to experts. MSLs discuss clinical data with physicians and researchers on behalf of life-science companies." },
+    WR: { name: "Science or Medical Writer", desc: "Writing is your strength. Science writers produce documents, content and communications for companies, publishers and agencies." },
+    PAT: { name: "Patent Agent / IP Specialist", desc: "You combine deep science with precise writing. Patent professionals help protect inventions, and many law firms train PhDs." },
+    FIN: { name: "Quant / Finance Analyst", desc: "You think in models and numbers. Quantitative and research analysts apply PhD-level math and data skills to markets and investments." },
+    POL: { name: "Science Policy Advisor", desc: "You want your expertise to shape decisions. Policy roles in government, non-profits and think tanks turn evidence into guidance." }
   };
   var bar = document.getElementById("progress-bar");
   var empty = document.getElementById("result-empty");
