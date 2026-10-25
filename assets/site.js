@@ -33,12 +33,12 @@
   var form = document.getElementById("finder-form");
   if (!form) return;
   var roles = {
-    RA: { name: "Regulatory Affairs", desc: "You like precise writing and a clear finish line. Regulatory scientists build the case that gets a drug approved, turning research data into submissions that agencies like the FDA review." },
-    QA: { name: "Quality Assurance / Control", desc: "You care that things are done right, every time. Quality roles review data, investigate deviations and decide whether a product batch is fit to release." },
-    AD: { name: "Analytical Development", desc: "You love making methods work. Analytical scientists develop and validate the assays that measure a drug's identity, purity and strength, and the job keeps you close to the lab." },
-    MSL: { name: "Medical Science Liaison", desc: "You enjoy explaining science to experts. MSLs travel to meet physicians and researchers, discuss clinical data and bring field insights back to the company." },
-    MW: { name: "Medical Writing", desc: "Writing is where you shine. Medical writers produce protocols, clinical study reports and plain-language summaries that regulators, doctors and patients read." },
-    CMC: { name: "CMC & Tech Transfer", desc: "You like coordinating moving parts. CMC scientists move a drug from the lab to manufacturing, working with contract manufacturers on scale-up and process control." }
+    RA: { name: "Regulatory Affairs", desc: "You turn research data into the submissions that get drugs approved." },
+    QA: { name: "Quality Assurance / Control", desc: "You make sure every batch is right before it reaches patients." },
+    AD: { name: "Analytical Development", desc: "You build and validate the methods that test every drug." },
+    MSL: { name: "Medical Science Liaison", desc: "You meet physicians and explain the science behind new treatments." },
+    MW: { name: "Medical Writing", desc: "You write the documents regulators and doctors rely on." },
+    CMC: { name: "CMC & Tech Transfer", desc: "You move drugs from the lab into manufacturing." }
   };
   var bar = document.getElementById("progress-bar");
   var empty = document.getElementById("result-empty");
