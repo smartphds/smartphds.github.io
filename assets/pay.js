@@ -2,7 +2,7 @@
    SmartPhDs payment links
    Paste each Stripe Payment Link between the quotes, then upload this file.
    A link looks like: https://buy.stripe.com/abc123...
-   Until a link is added, its button opens an email to hello@smartphds.com
+   Until a link is added, its button opens an email to smartphds1@gmail.com
    so visitors can still order.
    ===================================================================== */
 var SMARTPHDS_PAYMENT_LINKS = {
@@ -20,7 +20,7 @@ var SMARTPHDS_PAYMENT_LINKS = {
       el.setAttribute("href", url);
     } else {
       var plan = el.getAttribute("data-plan") || "SmartPhDs";
-      el.setAttribute("href", "mailto:hello@smartphds.com?subject=" + encodeURIComponent("Order: " + plan + " package"));
+      el.setAttribute("href", "mailto:smartphds1@gmail.com?subject=" + encodeURIComponent("Order: " + plan + " package"));
     }
   });
 })();
