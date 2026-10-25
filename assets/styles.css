@@ -515,3 +515,11 @@ footer .social a { color: var(--accent); font-weight: 500; }
 .refund-link { grid-column: 2; font-family: var(--f-display); font-weight: 600; }
 .refund-link a { text-decoration: none; }
 @media (max-width: 760px) { .refund-row { grid-template-columns: 1fr; } .refund-link { grid-column: 1; } }
+
+/* News roundup */
+.news-list .news-item { border-top: 2px solid var(--ink); padding-top: 1.1rem; margin-top: 1.2rem; display: grid; gap: .6rem; }
+.news-list .news-item h2 { margin-top: 0; font-size: clamp(1.35rem, 2.6vw, 1.7rem); }
+.news-meaning { background: color-mix(in srgb, var(--mark) 35%, #FFFFFF); padding: .8rem 1rem; border-radius: 6px; }
+.news-source a { font-family: var(--f-display); font-weight: 600; text-decoration: none; }
+.news-note { color: var(--muted); font-size: .95rem; margin-top: 2rem; }
+.latest-news { margin-top: 1.4rem; }

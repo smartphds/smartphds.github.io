@@ -10,6 +10,29 @@ Folders starting with "_" are not published by GitHub Pages.
 """
 import html, re, sys, datetime, pathlib
 
+
+import json as _json
+
+def seo_head(page, title, desc, url, section, section_url, published=None):
+    """Replace per-page SEO tags: og:url, og:description, and Article + Breadcrumb structured data."""
+    today = published or datetime.date.today().isoformat()
+    page = re.sub(r'\n<meta property="og:url" content="[^"]*">', "", page)
+    page = re.sub(r'\n<meta property="og:description" content="[^"]*">', "", page)
+    page = re.sub(r'\n<script type="application/ld\+json">.*?</script>', "", page, flags=re.S)
+    ld = [{"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc,
+           "datePublished": today, "dateModified": today, "mainEntityOfPage": url,
+           "image": "https://smartphds.com/assets/og-image.png",
+           "author": {"@type": "Organization", "name": "SmartPhDs", "url": "https://smartphds.com"},
+           "publisher": {"@type": "Organization", "name": "SmartPhDs", "logo": {"@type": "ImageObject", "url": "https://smartphds.com/assets/apple-touch-icon.png"}}},
+          {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://smartphds.com/"},
+              {"@type": "ListItem", "position": 2, "name": section, "item": section_url},
+              {"@type": "ListItem", "position": 3, "name": title, "item": url}]}]
+    tags = (f'\n<meta property="og:url" content="{url}">'
+            f'\n<meta property="og:description" content="{html.escape(desc, quote=True)}">'
+            f'\n<script type="application/ld+json">{_json.dumps(ld)}</script>')
+    return page.replace('\n<meta property="og:type" content="article">', tags + '\n<meta property="og:type" content="article">', 1)
+
 slug, title, desc, minutes, body_file = sys.argv[1:6]
 root = pathlib.Path(".")
 template = (root / "guides/industry-resume-for-phds.html").read_text()
@@ -27,6 +50,7 @@ page = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" hr
 page = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{t}">', page, count=1)
 page = re.sub(r"  <article>.*?</article>", lambda m: "  " + body, page, count=1, flags=re.S)
 assert "<script" not in body and "onclick" not in body, "no scripts in articles"
+page = seo_head(page, title, desc, f"https://smartphds.com/guides/{slug}.html", "Blog", "https://smartphds.com/guides/")
 target.write_text(page)
 
 def first_words(s):
