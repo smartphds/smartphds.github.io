@@ -4,7 +4,7 @@ The weekly Shorts task takes the first unchecked topic, makes the video, then ma
 If this week's blog guide (published Tuesday) suits a Short better, use that first and add it here as done.
 Mix across fields: tech/data, consulting, biotech/pharma, finance, policy, engineering, writing.
 
-- [x] 3 resume fixes every PhD needs for industry (2026-10-24, GribDIBX1j4)
+- [x] 3 resume fixes every PhD needs for industry (2026-10-24, RkcgTUrjk4E)
 - [ ] 5 industry jobs that hire PhDs from any field
 - [ ] How to answer "Why are you leaving academia?"
 - [ ] Turn one publication into a resume result (before/after)

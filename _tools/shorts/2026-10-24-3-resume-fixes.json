@@ -1,0 +1,16 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {"kicker": "PhD to industry", "title": "Your PhD is industry-ready.\nYour resume isn't.", "highlight": "Your resume isn't.", "body": "3 fixes recruiters notice in seconds.", "seconds": 4.5,
+     "say": "Your P H D is industry ready. Your resume isn't. Here are three fixes recruiters notice in seconds."},
+    {"kicker": "Fix 1", "title": "Keep it to 2 pages.", "highlight": "2 pages", "body": "Recruiters skim. Put your full publication list on LinkedIn, not your resume.", "seconds": 5.5,
+     "say": "Fix one. Keep it to two pages. Recruiters skim, so put your full publication list on LinkedIn, not your resume."},
+    {"kicker": "Fix 2", "title": "Start every bullet with a strong verb.", "highlight": "strong verb", "before": "Responsible for lab instruments.", "after": "Ran 3 instruments supporting 5 projects.", "seconds": 6.5,
+     "say": "Fix two. Start every bullet with a strong verb. Not, responsible for lab instruments. Instead, ran three instruments supporting five projects."},
+    {"kicker": "Fix 3", "title": "Add a number to half your bullets.", "highlight": "a number", "body": "Samples run. People trained. Time saved. Numbers show impact.", "seconds": 5.5,
+     "say": "Fix three. Add a number to half your bullets. Samples run, people trained, time saved. Numbers show impact."},
+    {"kicker": "Free", "title": "Get the 12-point resume checklist.", "highlight": "checklist", "body": "No sign-up. Link in the description.", "seconds": 4.5,
+     "say": "Want the full list? Grab the free twelve point resume checklist. No sign up. Link in the description."}
+  ]
+}
