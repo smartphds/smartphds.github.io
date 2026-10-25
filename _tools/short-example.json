@@ -1,0 +1,9 @@
+{
+  "slides": [
+    {"kicker": "PhD to industry", "title": "Your PhD is industry-ready.\nYour resume isn't.", "highlight": "Your resume isn't.", "body": "3 fixes recruiters notice in seconds.", "seconds": 4.5},
+    {"kicker": "Fix 1", "title": "Keep it to 2 pages.", "highlight": "2 pages", "body": "Recruiters skim. Put your full publication list on LinkedIn, not your resume.", "seconds": 5.5},
+    {"kicker": "Fix 2", "title": "Start every bullet with a strong verb.", "highlight": "strong verb", "before": "Responsible for lab instruments.", "after": "Ran 3 instruments supporting 5 projects.", "seconds": 6.5},
+    {"kicker": "Fix 3", "title": "Add a number to half your bullets.", "highlight": "a number", "body": "Samples run. People trained. Time saved. Numbers show impact.", "seconds": 5.5},
+    {"kicker": "Free", "title": "Get the 12-point resume checklist.", "highlight": "checklist", "body": "No sign-up. Link in the description.", "seconds": 4.5}
+  ]
+}
