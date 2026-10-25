@@ -10,7 +10,11 @@
       var btn = form.querySelector("button");
       var msg = form.parentNode.querySelector(".signup-msg");
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
-      fetch(form.action, { method: "POST", mode: "no-cors", body: new FormData(form) })
+      var params = new URLSearchParams(new FormData(form));
+      params.append("ajax", "1");
+      params.append("callback", "mlWebformSubmitted");
+      // MailerLite's own embed script submits with a GET (JSONP) request, so this matches it
+      fetch(form.action + "?" + params.toString(), { method: "GET", mode: "no-cors", credentials: "omit" })
         .then(function () {
           form.hidden = true;
           if (msg) { msg.hidden = false; msg.textContent = "You're in. Check your inbox for the checklist and your first tips."; msg.focus(); }
