@@ -6,9 +6,9 @@
    so visitors can still order.
    ===================================================================== */
 var SMARTPHDS_PAYMENT_LINKS = {
-  launch: "",        // Launch (Beginner), $89
-  accelerate: "",    // Accelerate (Intermediate), $149
-  breakthrough: ""   // Breakthrough (Advanced), $249
+  launch: "",        // Launch (Beginner), $99
+  accelerate: "",    // Accelerate (Intermediate), $300
+  breakthrough: ""   // Breakthrough (Advanced), $600
 };
 
 (function () {
