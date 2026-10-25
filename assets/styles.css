@@ -537,3 +537,18 @@ footer .social a { color: var(--accent); font-weight: 500; }
 /* Intake checklist on the thank-you page */
 .steps-list { display: grid; gap: .55rem; padding-left: 1.3rem; margin: .4rem 0 1rem; font-size: 1.05rem; }
 .steps-list li::marker { font-weight: 700; color: var(--accent); }
+
+/* Email sign-up band */
+.signup { background: var(--ink, #13203B); color: #fff; padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.signup .label { color: #FFE24D; }
+.signup h2 { color: #fff; font-size: clamp(1.6rem, 3.6vw, 2.3rem); line-height: 1.15; margin: .3rem 0 .6rem; }
+.signup p { color: #C9D0E3; margin: 0; }
+.signup-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.signup-form { display: flex; gap: .6rem; flex-wrap: wrap; }
+.signup-form input[type="email"] { flex: 1 1 14rem; min-width: 0; padding: .85rem 1rem; border-radius: 10px; border: 2px solid transparent; font: inherit; font-size: 1rem; background: #fff; color: #13203B; }
+.signup-form input[type="email"]:focus { outline: none; border-color: #FFE24D; }
+.signup-form .btn { flex: 0 0 auto; }
+.signup-msg { margin-top: .8rem !important; color: #FFE24D !important; font-weight: 600; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+@media (max-width: 760px) { .signup-row { grid-template-columns: 1fr; } }
+@media print { .no-print { display: none !important; } }

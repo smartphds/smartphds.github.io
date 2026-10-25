@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://assets.mailerlite.com; object-src 'none'; base-uri 'self'; form-action https://assets.mailerlite.com; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PhD-to-Industry Resume Checklist | SmartPhDs</title>
@@ -100,6 +100,26 @@
     </div>
   </div>
 </main>
+  <section class="signup no-print" aria-labelledby="signup-h">
+    <div class="wrap signup-row">
+      <div>
+        <p class="label">Free, weekly</p>
+        <h2 id="signup-h">Get the free checklist + weekly career tips.</h2>
+        <p>One short email a week for PhDs and postdocs moving into industry. Unsubscribe anytime.</p>
+      </div>
+      <div>
+        <form class="signup-form" action="https://assets.mailerlite.com/jsonp/2740775/forms/202308388964533470/subscribe" method="post" target="_blank">
+          <label class="sr-only" for="signup-email">Email address</label>
+          <input id="signup-email" type="email" name="fields[email]" placeholder="you@example.com" autocomplete="email" required>
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+          <button class="btn btn-mark" type="submit">Send me the tips</button>
+        </form>
+        <p class="signup-msg" role="status" tabindex="-1" hidden></p>
+      </div>
+    </div>
+  </section>
+
 
 <footer>
   <div class="wrap">
@@ -109,5 +129,6 @@
   </div>
 </footer>
 <script src="assets/print.js"></script>
+<script src="assets/signup.js" defer></script>
 </body>
 </html>
