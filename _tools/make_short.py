@@ -7,13 +7,19 @@ SCRIPT.json:
 {
   "slides": [
     {"kicker": "Small label", "title": "Big text, use \\n for line breaks", "highlight": "words to highlight",
-     "body": "Optional smaller text", "before": "optional", "after": "optional", "seconds": 5}
-  ]
+     "body": "Optional smaller text", "before": "optional", "after": "optional", "seconds": 5,
+     "say": "Optional voiceover line (defaults to the slide's text)"}
+  ],
+  "voice": "af_heart", "music": true
 }
 The last slide is followed by an automatic end card with the logo and smartphds.com.
-Needs: Pillow, ffmpeg, fonts in _tools/fonts/.
+Each slide is stretched to fit its voiceover. Audio = voiceover (Kokoro, offline) over an
+original synthesized music bed, so there is nothing copyrighted in the track.
+Needs: Pillow, numpy, ffmpeg, kokoro-onnx + soundfile (pip), fonts in _tools/fonts/.
+Voice model files (~350 MB) download once from GitHub into ~/.cache/smartphds-tts.
 """
-import json, math, os, subprocess, sys, tempfile, textwrap
+import json, math, os, subprocess, sys, tempfile, textwrap, urllib.request
+import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 W, H, FPS = 1080, 1920, 30
@@ -48,6 +54,55 @@ def hexes(d):
         for gy in range(-40, H + 80, 100):
             pts = [(gx + 21, gy + 3), (gx + 40, gy + 14), (gx + 40, gy + 36), (gx + 21, gy + 47), (gx + 2, gy + 36), (gx + 2, gy + 14), (gx + 21, gy + 3)]
             d.line(pts, fill="#151C2E", width=2)
+
+
+SR = 24000
+TTS_DIR = os.path.expanduser("~/.cache/smartphds-tts")
+TTS_URL = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/"
+
+def tts_engine():
+    from kokoro_onnx import Kokoro
+    os.makedirs(TTS_DIR, exist_ok=True)
+    for f in ("kokoro-v1.0.onnx", "voices-v1.0.bin"):
+        dst = os.path.join(TTS_DIR, f)
+        if not os.path.exists(dst):
+            print("downloading", f); urllib.request.urlretrieve(TTS_URL + f, dst + ".part"); os.rename(dst + ".part", dst)
+    return Kokoro(os.path.join(TTS_DIR, "kokoro-v1.0.onnx"), os.path.join(TTS_DIR, "voices-v1.0.bin"))
+
+def narration(s):
+    if s.get("say"): return s["say"]
+    parts = [s.get("title", "").replace("\n", " ")]
+    if s.get("before"): parts += ["Instead of: " + s["before"], "Try: " + s["after"]]
+    if s.get("body"): parts.append(s["body"])
+    return " ".join(p.strip() for p in parts if p.strip())
+
+def speak(engine, text, voice):
+    samples, sr = engine.create(text, voice=voice, speed=1.05, lang="en-us")
+    assert sr == SR
+    return np.asarray(samples, dtype=np.float32)
+
+def music_bed(total):
+    """Original soft pad + pluck loop (C - Am - F - G), 92 bpm. Generated, so royalty-free."""
+    n = int(total * SR); t = np.arange(n) / SR; out = np.zeros(n, np.float32)
+    beat = 60 / 92; bar = 4 * beat
+    chords = [[48, 55, 60, 64], [45, 52, 57, 60], [41, 48, 53, 57], [43, 50, 55, 59]]
+    f = lambda m: 440 * 2 ** ((m - 69) / 12)
+    nbars = int(total / bar) + 1
+    for b in range(nbars):
+        ch = chords[b % 4]; st = int(b * bar * SR); ln = min(int(bar * SR), n - st)
+        if ln <= 0: break
+        tt = np.arange(ln) / SR
+        env = np.minimum(1, tt / 0.6) * np.minimum(1, (bar - tt) / 0.5)
+        for m in ch:
+            out[st:st + ln] += 0.05 * env * (np.sin(2 * np.pi * f(m) * tt) + 0.3 * np.sin(2 * np.pi * f(m) * 2.003 * tt))
+        for k in range(8):  # eighth-note pluck arpeggio, one octave up
+            ps = st + int(k * beat / 2 * SR); pl = min(int(0.45 * SR), n - ps)
+            if pl <= 0: continue
+            pt = np.arange(pl) / SR; m = ch[[1, 2, 3, 2][k % 4]] + 12
+            out[ps:ps + pl] += 0.035 * np.exp(-pt * 7) * np.sin(2 * np.pi * f(m) * pt)
+    fade = int(1.5 * SR); out[:fade] *= np.linspace(0, 1, fade); out[-fade:] *= np.linspace(1, 0, fade)
+    return out
+
 
 def slide_image(s, idx, total):
     im = Image.new("RGB", (W, H), NAVY); d = ImageDraw.Draw(im)
@@ -106,12 +161,17 @@ def end_card():
     return im
 
 def main(script, out):
-    slides = json.load(open(script))["slides"]
+    cfg = json.load(open(script)); slides = cfg["slides"]
     tmp = tempfile.mkdtemp()
+    engine = tts_engine(); voice = cfg.get("voice", "af_heart")
+    lead = 0.35
+    voices = [speak(engine, narration(s), voice) for s in slides]
+    voices.append(speak(engine, cfg.get("end_say", "Follow SmartPhDs for weekly career tips. Free resources at smart P H Ds dot com."), voice))
     parts = []
     for i, s in enumerate(slides):
-        p = os.path.join(tmp, f"s{i}.png"); slide_image(s, i, len(slides)).save(p); parts.append((p, s.get("seconds", 5)))
-    p = os.path.join(tmp, "end.png"); end_card().save(p); parts.append((p, 3.5))
+        p = os.path.join(tmp, f"s{i}.png"); slide_image(s, i, len(slides)).save(p)
+        parts.append((p, round(max(s.get("seconds", 4), len(voices[i]) / SR + lead + 0.6), 2)))
+    p = os.path.join(tmp, "end.png"); end_card().save(p); parts.append((p, round(max(3.5, len(voices[-1]) / SR + lead + 0.8), 2)))
     clips = []
     for i, (img, secs) in enumerate(parts):
         c = os.path.join(tmp, f"c{i}.mp4")
@@ -119,12 +179,29 @@ def main(script, out):
         # gentle zoom-in for motion, fade in/out
         vf = (f"scale=1188:2112,zoompan=z='min(1+on/{frames}*0.05,1.05)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS},"
               f"fade=t=in:st=0:d=0.35,fade=t=out:st={secs-0.35}:d=0.35,format=yuv420p")
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", img, "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
-                        "-t", str(secs), "-vf", vf, "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-c:a", "aac", "-b:a", "96k", "-shortest", c], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", img, "-t", str(secs), "-vf", vf,
+                        "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-an", c], check=True)
         clips.append(c)
     lst = os.path.join(tmp, "list.txt"); open(lst, "w").write("".join(f"file '{c}'\n" for c in clips))
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", "-movflags", "+faststart", out], check=True)
-    print("wrote", out)
+    silent = os.path.join(tmp, "video.mp4")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", silent], check=True)
+    # audio: voice + ducked music bed
+    total = sum(sec for _, sec in parts)
+    starts, acc = [], 0.0
+    for _, sec in parts: starts.append(acc + lead); acc += sec
+    bed = music_bed(total) * (0.55 if cfg.get("music", True) else 0)
+    duck = np.ones_like(bed); vtrack = np.zeros_like(bed)
+    for v, st in zip(voices, starts):
+        i = int(st * SR); j = min(i + len(v), len(bed)); vtrack[i:j] += v[:j - i]
+        a, b = max(0, i - 2400), min(len(bed), j + 4800); duck[a:b] = 0.45
+    k = int(0.15 * SR); duck = np.convolve(duck, np.ones(k) / k, mode="same")
+    mix = vtrack * 0.95 + bed * duck
+    mix = mix / max(1e-6, np.abs(mix).max()) * 0.89
+    import soundfile as sf
+    wav = os.path.join(tmp, "audio.wav"); sf.write(wav, mix, SR)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-shortest", "-movflags", "+faststart", out], check=True)
+    print("wrote", out, f"{total:.1f}s")
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
