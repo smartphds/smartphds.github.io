@@ -6,9 +6,9 @@
    so visitors can still order.
    ===================================================================== */
 var SMARTPHDS_PAYMENT_LINKS = {
-  launch: "",        // Launch (Beginner), $99
-  accelerate: "",    // Accelerate (Intermediate), $300
-  breakthrough: ""   // Breakthrough (Advanced), $600
+  launch: "https://buy.stripe.com/fZu4gz2v1cdj1Ade8nak000",        // Launch (Beginner), $99
+  accelerate: "https://buy.stripe.com/8x26oH5Hdb9ffr34xNak001",    // Accelerate (Intermediate), $300
+  breakthrough: "https://buy.stripe.com/4gM9AT3z57X3fr3d4jak002"   // Breakthrough (Advanced), $600
 };
 
 (function () {
