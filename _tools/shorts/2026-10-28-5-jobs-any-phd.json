@@ -1,0 +1,55 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {
+      "kicker": "PhD to industry",
+      "title": "Any PhD.\n5 jobs that want you.",
+      "highlight": "5 jobs",
+      "body": "Every field. No restart needed.",
+      "seconds": 4.5,
+      "say": "P H D in any field? Five industry jobs that hire from every discipline."
+    },
+    {
+      "kicker": "Jobs 1 and 2",
+      "title": "Data scientist.\nConsultant.",
+      "highlight": "Consultant.",
+      "body": "Turn messy data into decisions. Break big problems into clear answers.",
+      "seconds": 5.5,
+      "say": "One, data scientist. You turn messy data into decisions. Two, consultant. You break big problems into clear answers."
+    },
+    {
+      "kicker": "Jobs 3 and 4",
+      "title": "UX researcher.\nPolicy analyst.",
+      "highlight": "Policy analyst.",
+      "body": "Interviews, surveys, careful evidence. Skills you already use.",
+      "seconds": 5.5,
+      "say": "Three, U X researcher. Four, policy analyst. Interviews, surveys and careful evidence. Skills you already use."
+    },
+    {
+      "kicker": "Job 5",
+      "title": "Technical or medical writer.",
+      "highlight": "writer",
+      "body": "You wrote a thesis. You can explain hard ideas clearly.",
+      "seconds": 5,
+      "say": "Five, technical or medical writer. You wrote a thesis, so you can explain hard ideas clearly."
+    },
+    {
+      "kicker": "The key",
+      "title": "Pitch the skill, not the topic.",
+      "highlight": "the skill",
+      "before": "I studied soil microbes for 5 years.",
+      "after": "I led a 5-year project and turned data into answers.",
+      "seconds": 6.5,
+      "say": "The key? Pitch the skill, not the topic. Not, I studied soil microbes. Instead, I led a five year project and turned data into answers."
+    },
+    {
+      "kicker": "Free",
+      "title": "Get the free PhD resume checklist.",
+      "highlight": "checklist",
+      "body": "No sign-up. Link in the description.",
+      "seconds": 4.5,
+      "say": "Grab the free resume checklist for P H Ds. Link in the description."
+    }
+  ]
+}
