@@ -78,7 +78,8 @@ row = f'    <li><a href="{date}.html">{e(title)}</a><span class="label">{nice}</
 if idx.exists():
     t = idx.read_text()
     if f'href="{date}.html"' not in t:
-        t = t.replace('<ul class="guides news-index">', '<ul class="guides news-index">\n' + row, 1)
+        t, n = re.subn(r'(<ul class="guides news-index"[^>]*>)', lambda m: m.group(1) + "\n" + row, t, count=1)
+        assert n == 1, "could not find the news list in news/index.html"
 else:
     g = (root / "guides/index.html").read_text()
     t = re.sub(r'<main class="wrap">.*?</main>', lambda m: f'''<main class="wrap">
