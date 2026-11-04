@@ -1,0 +1,47 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {
+      "kicker": "PhD to data science",
+      "title": "Data science from any PhD.\nNo CS degree needed.",
+      "highlight": "any PhD.",
+      "body": "What you already have, and 2 skills to add.",
+      "seconds": 5,
+      "say": "Want to move into data science with a P H D in any field? You don't need a computer science degree. Here's what you already have, and two skills to add."
+    },
+    {
+      "kicker": "You already have",
+      "title": "Experiments, stats, messy data.",
+      "highlight": "messy data.",
+      "body": "Controls and confounders are the core of A/B testing. Cleaning data is most of the week.",
+      "seconds": 6.5,
+      "say": "You already design experiments, run statistics, and clean messy data. That's the core of A B testing, and most of a data scientist's week."
+    },
+    {
+      "kicker": "Skill 1",
+      "title": "Learn SQL.",
+      "highlight": "SQL.",
+      "body": "Academic data rarely lives in databases. It shows up in almost every interview.",
+      "seconds": 5.5,
+      "say": "Skill one. Learn S Q L. Academic data rarely lives in a database, but S Q L shows up in almost every interview."
+    },
+    {
+      "kicker": "Skill 2",
+      "title": "Think like the business.",
+      "highlight": "the business.",
+      "before": "Ran regressions on survey data.",
+      "after": "Found 3 factors behind engagement and shaped advising changes.",
+      "seconds": 7,
+      "say": "Skill two. Think like the business. Not, ran regressions on survey data. Instead, found three factors behind engagement, and shaped real changes."
+    },
+    {
+      "kicker": "Free guide",
+      "title": "Data science for PhDs: the full guide.",
+      "highlight": "full guide.",
+      "body": "Roles, projects, interviews, 90-day plan. Link in the description.",
+      "seconds": 5,
+      "say": "Want the roles, projects, and a ninety day plan? Read the free guide. Link in the description."
+    }
+  ]
+}
