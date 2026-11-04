@@ -8,7 +8,7 @@ Mix across fields: tech/data, consulting, biotech/pharma, finance, policy, engin
 - [x] 5 industry jobs that hire PhDs from any field (2026-10-28, NVb2x8IEX4I)
 - [ ] How to answer "Why are you leaving academia?"
 - [ ] Turn one publication into a resume result (before/after)
-- [x] Data science roles: what PhDs already have and the 2 skills to add (2026-11-04)
+- [x] Data science roles: what PhDs already have and the 2 skills to add (2026-11-04, U5djpAfg9Eg)
 - [ ] Consulting case interviews in 30 seconds
 - [ ] Postdoc or industry? 3 questions to decide
 - [ ] Your LinkedIn headline: before/after
