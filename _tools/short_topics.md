@@ -10,7 +10,7 @@ Mix across fields: tech/data, consulting, biotech/pharma, finance, policy, engin
 - [ ] Turn one publication into a resume result (before/after)
 - [x] Data science roles: what PhDs already have and the 2 skills to add (2026-11-04, U5djpAfg9Eg)
 - [ ] Consulting case interviews in 30 seconds
-- [ ] Postdoc or industry? 3 questions to decide
+- [x] Postdoc or industry? 3 questions to decide (2026-11-11)
 - [ ] Your LinkedIn headline: before/after
 - [ ] Informational interviews: the 3-line message that gets replies
 - [ ] Regulatory affairs: what the job really is

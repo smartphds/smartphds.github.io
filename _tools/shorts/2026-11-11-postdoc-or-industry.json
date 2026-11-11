@@ -1,0 +1,47 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {
+      "kicker": "PhD to industry",
+      "title": "Postdoc or industry?\nAsk 3 questions first.",
+      "highlight": "3 questions",
+      "body": "Decide on purpose, not by default.",
+      "seconds": 5,
+      "say": "Thinking about a postdoc before industry? Don't take one by default. Ask these three questions first."
+    },
+    {
+      "kicker": "Question 1",
+      "title": "What job do I want after this?",
+      "highlight": "What job",
+      "body": "Name the title. If you can't, informational interviews are a cheaper way to find out.",
+      "seconds": 6,
+      "say": "Question one. What job do I want after this? Name the title. If you can't, informational interviews are a cheaper way to find out."
+    },
+    {
+      "kicker": "Question 2",
+      "title": "Do postings for that job ask for one?",
+      "highlight": "ask for one?",
+      "body": "Check ten real postings. Data science, consulting and regulatory roles often hire PhDs directly.",
+      "seconds": 7,
+      "say": "Question two. Do job postings for that role ask for a postdoc? Check ten real ones. Data science, consulting, and regulatory roles often hire P H Ds directly."
+    },
+    {
+      "kicker": "Question 3",
+      "title": "What will I have at the end?",
+      "highlight": "the end?",
+      "before": "More papers.",
+      "after": "A new technique, a new field, or industry contacts.",
+      "seconds": 7,
+      "say": "Question three. What will I have at the end that I don't have now? Not, more papers. Instead, a new technique, a new field, or industry contacts."
+    },
+    {
+      "kicker": "Free guide",
+      "title": "Should you do a postdoc first?",
+      "highlight": "postdoc first?",
+      "body": "When it helps, when to skip it, 5 questions. Link in the description.",
+      "seconds": 5,
+      "say": "Want all five questions, and when a postdoc really helps? Read the free guide. Link in the description."
+    }
+  ]
+}
