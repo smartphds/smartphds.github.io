@@ -8,7 +8,7 @@ Add new ideas at the bottom. Folders starting with "_" are not published.
 - [x] How AI is changing pharma and biotech jobs for PhDs in 2026 (ai-pharma-biotech-jobs-phds-2026) 2026-10-24
 - [x] Data science for PhDs: how to make the switch from any field (data-science-for-phds) 2026-11-03
 - [x] Should you do a postdoc before industry? (postdoc-before-industry-phd) 2026-11-10
-- [ ] Management consulting for PhDs: how case interviews work
+- [x] Management consulting for PhDs: how case interviews work (consulting-case-interviews-for-phds) 2026-11-17
 - [ ] The 5 interview questions every PhD gets in industry interviews
 - [ ] Product management for PhDs: is it right for you?
 - [ ] What a CMC scientist does all day
