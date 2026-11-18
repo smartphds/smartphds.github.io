@@ -9,7 +9,7 @@ Mix across fields: tech/data, consulting, biotech/pharma, finance, policy, engin
 - [ ] How to answer "Why are you leaving academia?"
 - [ ] Turn one publication into a resume result (before/after)
 - [x] Data science roles: what PhDs already have and the 2 skills to add (2026-11-04, U5djpAfg9Eg)
-- [ ] Consulting case interviews in 30 seconds
+- [x] Consulting case interviews in 30 seconds (2026-11-18)
 - [x] Postdoc or industry? 3 questions to decide (2026-11-11, o1Fdy3CTEI4)
 - [ ] Your LinkedIn headline: before/after
 - [ ] Informational interviews: the 3-line message that gets replies

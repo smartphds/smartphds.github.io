@@ -1,0 +1,55 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {
+      "kicker": "PhD to consulting",
+      "title": "Case interviews\nin 30 seconds.",
+      "highlight": "30 seconds.",
+      "body": "Consulting firms hire PhDs from any field. This is the test.",
+      "seconds": 5,
+      "say": "Consulting firms hire P H Ds from any field. But first, you face the case interview. Here it is in thirty seconds."
+    },
+    {
+      "kicker": "The format",
+      "title": "Solve a business problem, live.",
+      "highlight": "live.",
+      "body": "Why did profits fall? Should the client enter a new market?",
+      "seconds": 6,
+      "say": "The interviewer gives you a business problem, like why did profits fall, or should the client enter a new market. You solve it out loud."
+    },
+    {
+      "kicker": "The method",
+      "title": "Use the same 5 steps.",
+      "highlight": "5 steps.",
+      "body": "Clarify. Structure. Analyze. Synthesize. Recommend.",
+      "seconds": 7,
+      "say": "Use the same five steps. Clarify the goal. Structure the problem. Analyze the data. Say what it means. Then recommend."
+    },
+    {
+      "kicker": "Tip 1",
+      "title": "Lead with the answer.",
+      "highlight": "the answer.",
+      "before": "We looked at revenue, then costs, then...",
+      "after": "Profits fell because costs rose. Here's why.",
+      "seconds": 7,
+      "say": "Tip one. Lead with the answer. Not, we looked at revenue, then costs, then. Instead, profits fell because costs rose. Here's why."
+    },
+    {
+      "kicker": "Tip 2",
+      "title": "Round your numbers.",
+      "highlight": "Round",
+      "body": "Roughly right in two minutes beats exact in ten.",
+      "seconds": 5,
+      "say": "Tip two. Round your numbers. Roughly right in two minutes beats exact in ten."
+    },
+    {
+      "kicker": "Free guide",
+      "title": "How case interviews work",
+      "highlight": "case interviews",
+      "body": "Case types, what's scored, how to practice. Link in the description.",
+      "seconds": 5,
+      "say": "Want case types, what interviewers score, and how to practice? Read the free guide. Link in the description."
+    }
+  ]
+}
