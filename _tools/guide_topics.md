@@ -9,7 +9,7 @@ Add new ideas at the bottom. Folders starting with "_" are not published.
 - [x] Data science for PhDs: how to make the switch from any field (data-science-for-phds) 2026-11-03
 - [x] Should you do a postdoc before industry? (postdoc-before-industry-phd) 2026-11-10
 - [x] Management consulting for PhDs: how case interviews work (consulting-case-interviews-for-phds) 2026-11-17
-- [ ] The 5 interview questions every PhD gets in industry interviews
+- [x] The 5 interview questions every PhD gets in industry interviews (phd-industry-interview-questions) 2026-11-24
 - [ ] Product management for PhDs: is it right for you?
 - [ ] What a CMC scientist does all day
 - [ ] Patent agent careers for PhDs in science and engineering
