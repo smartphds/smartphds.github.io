@@ -1,0 +1,55 @@
+{
+  "voice": "af_heart",
+  "music": true,
+  "slides": [
+    {
+      "kicker": "PhD interview question",
+      "title": "\"Why are you\nleaving academia?\"",
+      "highlight": "leaving academia?",
+      "body": "Almost every PhD hears it. Here's how to answer.",
+      "seconds": 5,
+      "say": "Why are you leaving academia? Almost every P H D hears this in industry interviews. Here's how to answer it."
+    },
+    {
+      "kicker": "What they're asking",
+      "title": "Toward this job, or\naway from academia?",
+      "highlight": "toward this job",
+      "body": "They want to know you'll thrive with deadlines, teams and goals.",
+      "seconds": 6.5,
+      "say": "The interviewer wants to know one thing. Are you running toward this job, or just away from academia? And will you thrive with deadlines and teams?"
+    },
+    {
+      "kicker": "Tip 1",
+      "title": "Talk about the pull,\nnot the push.",
+      "highlight": "the pull",
+      "before": "Funding is awful and there are no jobs.",
+      "after": "I want my work used by real customers.",
+      "seconds": 8,
+      "say": "Tip one. Talk about the pull, not the push. Not, funding is awful and there are no jobs. Instead, I want my work used by real customers."
+    },
+    {
+      "kicker": "Tip 2",
+      "title": "Back it with one real example.",
+      "highlight": "one real example.",
+      "body": "A collaboration, an internship, or a project with industry partners.",
+      "seconds": 6.5,
+      "say": "Tip two. Back it up with one real example, like a collaboration or internship that showed you this path fits."
+    },
+    {
+      "kicker": "Tip 3",
+      "title": "Keep it short. Then pivot.",
+      "highlight": "pivot.",
+      "body": "Thirty seconds, then link it to this role.",
+      "seconds": 5.5,
+      "say": "Tip three. Keep it to about thirty seconds, then connect it to why you want this role."
+    },
+    {
+      "kicker": "Free guide",
+      "title": "The 5 questions every PhD gets",
+      "highlight": "5 questions",
+      "body": "What each one really asks, and how to answer. Link in the description.",
+      "seconds": 5.5,
+      "say": "Want all five questions every P H D gets in industry interviews? Read the free guide. Link in the description."
+    }
+  ]
+}
